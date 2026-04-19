@@ -36,7 +36,18 @@
             </header>
 
             <div id="city-list" class="space-y-4">
-                <!-- Cards will be injected here -->
+                <!-- Static Card for New York -->
+                <div id="ny-card" class="city-card glass rounded-2xl p-6 flex justify-between items-center cursor-pointer transition-all hover:bg-white/10">
+                    <div>
+                        <h2 class="text-xl font-semibold">New York</h2>
+                        <p class="text-slate-400 text-sm">Clear</p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <span class="text-2xl font-bold">18°</span>
+                        <!-- Sun Icon SVG -->
+                        <svg class="text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -48,8 +59,51 @@
             </button>
 
             <div id="city-detail-content">
-                <!-- Details will be injected here -->
+                <!-- Detailed info for the city -->
+                <div class="text-center mb-10">
+                    <h1 class="text-4xl font-bold mb-2">New York</h1>
+                    <div class="flex justify-center mb-4">
+                        <svg class="text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+                    </div>
+                    <div class="text-6xl font-bold mb-2">18°C</div>
+                    <p class="text-xl text-slate-400 uppercase tracking-widest">Clear Sky</p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="glass rounded-2xl p-4 text-center">
+                        <p class="text-slate-400 text-xs uppercase mb-1">Day High</p>
+                        <p class="text-2xl font-semibold text-orange-400">22°</p>
+                    </div>
+                    <div class="glass rounded-2xl p-4 text-center">
+                        <p class="text-slate-400 text-xs uppercase mb-1">Night Low</p>
+                        <p class="text-2xl font-semibold text-blue-300">12°</p>
+                    </div>
+                </div>
+
+                <div class="mt-8 glass rounded-2xl p-6">
+                    <h3 class="text-sm font-bold uppercase text-slate-400 mb-2">Details</h3>
+                    <p class="text-slate-200">It's a beautiful clear day in New York. Perfect for a walk in Central Park!</p>
+                </div>
             </div>
         </div>
     </div>
+
+    <script>
+        // Simple navigation logic
+        const dashboard = document.getElementById('dashboard-page');
+        const detail = document.getElementById('detail-page');
+        const nyCard = document.getElementById('ny-card');
+        const backBtn = document.getElementById('back-btn');
+
+        nyCard.onclick = () => {
+            dashboard.classList.add('hidden-page');
+            detail.classList.remove('hidden-page');
+        };
+
+        backBtn.onclick = () => {
+            dashboard.classList.remove('hidden-page');
+            detail.classList.add('hidden-page');
+        };
+    </script>
 </body>
+</html>
