@@ -36,18 +36,28 @@
             </header>
 
             <div id="city-list" class="space-y-4">
-                <!-- Static Card for New York -->
-                <div id="ny-card" class="city-card glass rounded-2xl p-6 flex justify-between items-center cursor-pointer transition-all hover:bg-white/10">
-                    <div>
-                        <h2 class="text-xl font-semibold">{{city.name}}</h2>
-                        <p class="text-slate-400 text-sm">{{city.state}}</p> <!-- Clear for example -->
-                    </div>
-                    <div class="flex items-center gap-4">
-                        <span class="text-2xl font-bold">{{city.temperature}°</span>
-                        <!-- Sun Icon SVG -->
-                        <svg class="text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
-                    </div>
+                {% for city in cities %}
+            <div class="glass rounded-2xl p-6 flex justify-between items-center transition-all hover:bg-white/10">
+                <div>
+                    <h2 class="text-xl font-semibold">{{ city.name }}</h2>
+                    <p class="text-slate-400 text-sm">{{ city.status }}</p>
                 </div>
+                <div class="flex items-center gap-4">
+                    <span class="text-2xl font-bold">{{ city.current }}°</span>
+                    
+                    <!-- Logic to show different icons based on status -->
+                    {% if city.status == 'Clear' %}
+                        <span class="text-2xl">☀️</span>
+                    {% elif city.status == 'Rain' %}
+                        <span class="text-2xl">🌧️</span>
+                    {% elif city.status == 'Snow' %}
+                        <span class="text-2xl">❄️</span>
+                    {% else %}
+                        <span class="text-2xl">☁️</span>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
             </div>
         </div>
 
