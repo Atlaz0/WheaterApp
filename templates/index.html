@@ -43,7 +43,7 @@
                         <p class="text-slate-400 text-sm">{{city.state}}</p> <!-- Clear for example -->
                     </div>
                     <div class="flex items-center gap-4">
-                        <span class="text-2xl font-bold">{{city.tempature}}°</span>
+                        <span class="text-2xl font-bold">{{city.temperature}°</span>
                         <!-- Sun Icon SVG -->
                         <svg class="text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
                     </div>
@@ -65,18 +65,18 @@
                     <div class="flex justify-center mb-4">
                         <svg class="text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
                     </div>
-                    <div class="text-6xl font-bold mb-2">{{city.tempature}}°C</div>
+                    <div class="text-6xl font-bold mb-2">{{city.temperature}}°C</div>
                     <p class="text-xl text-slate-400 uppercase tracking-widest">Clear Sky</p>
                 </div>
 
                 <div class="grid grid-cols-2 gap-4">
                     <div class="glass rounded-2xl p-4 text-center">
                         <p class="text-slate-400 text-xs uppercase mb-1">Day High</p>
-                        <p class="text-2xl font-semibold text-orange-400">{{city.tempature_day}}°</p>
+                        <p class="text-2xl font-semibold text-orange-400">{{city.temperature_day}}°</p>
                     </div>
                     <div class="glass rounded-2xl p-4 text-center">
                         <p class="text-slate-400 text-xs uppercase mb-1">Night Low</p>
-                        <p class="text-2xl font-semibold text-blue-300">{{city.tempature_night}}°</p>
+                        <p class="text-2xl font-semibold text-blue-300">{{city.temperature_night}}°</p>
                     </div>
                 </div>
 
