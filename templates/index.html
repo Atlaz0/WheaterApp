@@ -1,9 +1,55 @@
 <!DOCTYPE html>
-<html>
-<body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyCast - Weather App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            min-height: 100vh;
+            color: white;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .city-card:active {
+            transform: scale(0.98);
+        }
+        .hidden-page {
+            display: none;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
 
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
+    <div id="app" class="max-w-md mx-auto">
+        <!-- Main Dashboard -->
+        <div id="dashboard-page">
+            <header class="mb-8">
+                <h1 class="text-3xl font-bold">SkyCast</h1>
+                <p class="text-slate-400">Your local weather at a glance</p>
+            </header>
 
+            <div id="city-list" class="space-y-4">
+                <!-- Cards will be injected here -->
+            </div>
+        </div>
+
+        <!-- Detail Page -->
+        <div id="detail-page" class="hidden-page">
+            <button id="back-btn" class="mb-6 flex items-center text-slate-400 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="m15 18-6-6 6-6"/></svg>
+                Back to Cities
+            </button>
+
+            <div id="city-detail-content">
+                <!-- Details will be injected here -->
+            </div>
+        </div>
+    </div>
 </body>
-</html>
