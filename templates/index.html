@@ -17,6 +17,9 @@
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
+        .city-card:active {
+            transform: scale(0.98);
+        }
     </style>
 </head>
 <body class="p-4 md:p-8">
@@ -27,7 +30,7 @@
         </header>
         <div class="space-y-4">
             {% for city in cities %}
-            <a href="/city/{{ city.name }}" class="block glass rounded-2xl p-6 flex justify-between items-center transition-all hover:bg-white/10 active:scale-95">
+            <a href="/city/{{ city.name }}" class="city-card block glass rounded-2xl p-6 flex justify-between items-center transition-all hover:bg-white/10">
                 <div>
                     <h2 class="text-xl font-semibold">{{ city.name }}</h2>
                     <p class="text-slate-400 text-sm">{{ city.status }}</p>
