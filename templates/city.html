@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyCast - {{ city.name }}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            min-height: 100vh;
+            color: white;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+    <div class="max-w-md mx-auto">
+        <a href="/" class="mb-6 flex items-center text-slate-400 hover:text-white transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="m15 18-6-6 6-6"/></svg>
+            Back to Cities
+        </a>
+
+        <div class="text-center mb-10">
+            <h1 class="text-4xl font-bold mb-2">{{ city.name }}</h1>
+            <div class="flex justify-center mb-4">
+                {% if city.status == 'Clear' %}
+                    <span class="text-6xl">☀️</span>
+                {% elif city.status == 'Rain' %}
+                    <span class="text-6xl">🌧️</span>
+                {% elif city.status == 'Snow' %}
+                    <span class="text-6xl">❄️</span>
+                {% else %}
+                    <span class="text-6xl">☁️</span>
+                {% endif %}
+            </div>
+            <div class="text-6xl font-bold mb-2">{{ city.current }}°C</div>
+            <p class="text-xl text-slate-400 uppercase tracking-widest">{{ city.status }}</p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+            <div class="glass rounded-2xl p-4 text-center">
+                <p class="text-slate-400 text-xs uppercase mb-1">Day High</p>
+                <p class="text-2xl font-semibold text-orange-400">{{ city.temperature_day }}°</p>
+            </div>
+            <div class="glass rounded-2xl p-4 text-center">
+                <p class="text-slate-400 text-xs uppercase mb-1">Night Low</p>
+                <p class="text-2xl font-semibold text-blue-300">{{ city.temperature_night }}°</p>
+            </div>
+        </div>
+
+        <div class="mt-8 glass rounded-2xl p-6">
+            <h3 class="text-sm font-bold uppercase text-slate-400 mb-2">Details</h3>
+            <p class="text-slate-200">{{ city.details }}</p>
+        </div>
+    </div>
+</body>
+</html>
